@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 
 from django.urls import path, include
-from . import views
+from user import views
 
 urlpatterns = [
     path('', views.home, name='home'),  # Add a path for the home page
 
     path('admin/', admin.site.urls),
+    path('', include('user.urls')),  # Include routes from the user app
+
 ]
